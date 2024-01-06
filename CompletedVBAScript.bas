@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module1"
+
 Sub CalculateYearlyChange()
 For Each ws In Worksheets
     Dim lastRow As Long
@@ -40,9 +40,9 @@ For Each ws In Worksheets
     ws.Cells(1, 16).Value = "Ticker"
     ws.Cells(1, 17).Value = "Value"
 ' Write headers for the output values in columns 9 through 12; and then again for the calculated values output
-GreatestPercentIncrease = 0
-GreatestPercentDecrease = 0
-GreatestTotalVolume = 0
+    GreatestPercentIncrease = 0
+    GreatestPercentDecrease = 0
+    GreatestTotalVolume = 0
 ' Loop through the data
     For i = 2 To lastRow
         TotalStockVolume = TotalStockVolume + ws.Cells(i, 7).Value
@@ -84,6 +84,7 @@ GreatestTotalVolume = 0
                 OpeningPriceRow = i + 1
         End If
     Next i
+'output calculated values into respective cells
     ws.Range("Q2") = GreatestPercentIncrease
     ws.Range("P2") = GreatestIncreaseTicker
     ws.Range("Q3") = GreatestPercentDecrease
